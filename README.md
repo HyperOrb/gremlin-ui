@@ -2,7 +2,7 @@
 
 ### Find the UX bugs you didn't know to test for.
 
-**Your tests use your app correctly.**  
+**Your tests use your app correctly.**<br>
 **Your users won't.**
 
 ![Real Gremlin run: CLI output, mobile screenshot evidence, and report](assets/demo.gif)
