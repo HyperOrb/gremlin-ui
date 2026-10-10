@@ -47,6 +47,7 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "test": "npm run build && node --test",
+    "gremlin": "npm run build --silent && node dist/cli/index.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "demo": "npm run build && node scripts/demo.mjs",

@@ -10,6 +10,6 @@ Checked 2026-10-10. Availability is a snapshot, not a reservation or legal asses
 
 Direct npm registry checks returned 404 for `gremlin-ui`, `gremlin-ux`, `gremlin-test`, and `try-gremlin`; `gremlin-run` returned 200. Chosen package: **gremlin-ui**. Registry endpoint: https://registry.npmjs.org/gremlin-ui . Recheck immediately before publication.
 
-GitHub repository search for `gremlin ux testing` returned two related results; repository names are scoped to owners. Metadata points to the intended `HyperOrb/gremlin-ui` repository, based on the authenticated GitHub account. No remote repository has been created, and no package has been published.
+GitHub repository search for `gremlin ux testing` returned two related results; repository names are scoped to owners. The project is now published at `HyperOrb/gremlin-ui`. The npm package has not been published.
 
 Differentiation: five deterministic families, a conservative browser guard, report evidence with confidence levels, a real broken/fixed fixture, and a portable agent repair loop. No cloud model, API key, novelty claim, or synthetic benchmark.

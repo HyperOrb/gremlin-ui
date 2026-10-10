@@ -7,12 +7,41 @@
 
 ![Real Gremlin run: CLI output, mobile screenshot evidence, and report](assets/demo.gif)
 
-_15-second replay of real run artifacts. No invented findings or scores._
+_A real Gremlin demo: one command → five UX attacks → evidence → report. No invented findings or scores._
+
+## Start here
+
+Gremlin is not published to npm yet, so the source install is the verified path today:
 
 ```sh
-# After the first npm release:
+git clone https://github.com/HyperOrb/gremlin-ui.git
+cd gremlin-ui
+npm ci
+```
+
+Want to see it work before pointing it at your own app?
+
+```sh
+npm run demo
+```
+
+That launches a disposable broken app, attacks it with all five Gremlins, runs the same checks against the fixed version, and writes real reports under `artifacts/`.
+
+Ready to test your own local app? Start your app normally, then run:
+
+```sh
+npm run gremlin -- http://localhost:3000
+```
+
+Then open `gremlin-report/report.html`. That's the whole basic workflow.
+
+Once the package is published, the same flow becomes:
+
+```sh
 npx gremlin-ui http://localhost:3000
 ```
+
+**What happens after you press Enter:** Gremlin opens a real browser, runs Mobile → Forms → Navigation → Keyboard → Chaos checks, saves screenshot evidence for strong findings, then writes terminal, HTML, and JSON reports locally.
 
 **You can't write a test for a bug you never imagined.**
 
@@ -20,20 +49,15 @@ Gremlin is **UX chaos testing**: fuzz testing, but for UX. It launches a real br
 
 It gives you observed failures, screenshots, selectors, reproduction steps and explanations. It runs locally with **no AI, API key, account, uploads, or analytics**. MIT licensed.
 
-> v0.1.0 is prepared but not published. The npm name was checked, not reserved. Use the working source-install commands below today.
+> v0.1.0 is prepared but not published to npm. The npm name was checked, not reserved. The GitHub source-install flow above is verified today.
 
 ## Try the real demo
 
-Node.js 22+ and npm:
+Already cloned the repo? Run:
 
 ```sh
-git clone https://github.com/HyperOrb/gremlin-ui.git
-cd gremlin-ui
-npm ci
 npm run demo
 ```
-
-_The clone URL is the intended launch repository; it has not been created yet. For this unpublished checkout, start with `cd /path/to/gremlin-ui` and the last two commands._
 
 The demo starts its own server on a free port, runs Gremlin against the **broken and fixed** Fieldnotes app, writes both reports, checks that no writes reached its backend, and stops its own server. On first use Gremlin installs only the Chromium headless shell if needed, with a clear message. Headed runs install the full browser separately. Download time depends on your connection; the under-60-second first-run target is not a guaranteed benchmark.
 
@@ -44,11 +68,10 @@ Open `artifacts/broken/report.html` and `artifacts/fixed/report.html`. Every fin
 Start your local app, then run from this checkout:
 
 ```sh
-npm run build
-node dist/cli/index.js http://localhost:3000
+npm run gremlin -- http://localhost:3000
 ```
 
-Or install the local package:
+Prefer a global local install while npm publishing is pending?
 
 ```sh
 npm pack
@@ -143,7 +166,7 @@ npm ci
 npx playwright install chromium
 npm test
 npm run format:check
-npm run demo:capture   # ffmpeg required; actual 15-second artifact replay
+npm run demo:capture   # ffmpeg required; short artifact replay from real demo output
 npm pack --dry-run
 ```
 
