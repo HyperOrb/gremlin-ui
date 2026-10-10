@@ -1,0 +1,8 @@
+node_modules/
+dist/
+gremlin-report/
+artifacts/
+*.tgz
+*.log
+.DS_Store
+playwright-state*.json

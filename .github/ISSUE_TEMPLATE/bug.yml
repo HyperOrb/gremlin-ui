@@ -1,0 +1,15 @@
+name: Bug / false positive
+description: A reproducible bug or finding that Gremlin should not report
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: Include expected behavior and whether this is a false positive.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: Command, Node/OS versions, and a minimal local fixture. Remove private data.
+    validations:
+      required: true

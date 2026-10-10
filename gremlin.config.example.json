@@ -1,0 +1,18 @@
+{
+  "gremlins": ["mobile", "forms", "navigation", "keyboard", "chaos"],
+  "includeRoutes": ["/guide"],
+  "excludeRoutes": ["/admin/*", "/account/*"],
+  "allowedActions": [],
+  "deniedActions": ["Export*"],
+  "dangerousKeywords": ["refund", "invite"],
+  "viewports": [
+    { "width": 320, "height": 740 },
+    { "width": 375, "height": 812 },
+    { "width": 390, "height": 844 },
+    { "width": 1280, "height": 800 }
+  ],
+  "maxPages": 3,
+  "timeout": 10000,
+  "settleMs": 250,
+  "screenshots": true
+}

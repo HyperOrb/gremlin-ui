@@ -1,0 +1,6 @@
+node_modules
+dist
+artifacts
+gremlin-report
+package-lock.json
+assets

@@ -1,0 +1,65 @@
+{
+  "name": "gremlin-ui",
+  "version": "0.1.0",
+  "description": "Find the UX bugs you didn't know to test for. Local-first UX chaos testing with Playwright.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "gremlin": "dist/cli/index.js",
+    "gremlin-ui": "dist/cli/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "skills",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "assets/demo.gif",
+    "gremlin.config.example.json",
+    "assets/report.png"
+  ],
+  "keywords": [
+    "ux",
+    "chaos-testing",
+    "fuzz-testing",
+    "playwright",
+    "testing",
+    "cli",
+    "agent-skills"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HyperOrb/gremlin-ui.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "demo": "npm run build && node scripts/demo.mjs",
+    "demo:serve": "node demo/server.mjs",
+    "demo:capture": "npm run demo && node scripts/capture.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "playwright": "^1.64.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "prettier": "^3.6.0"
+  }
+}

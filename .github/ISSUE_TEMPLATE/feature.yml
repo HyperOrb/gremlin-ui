@@ -1,0 +1,13 @@
+name: New Gremlin / feature
+description: Describe a real user behavior the tool should challenge
+body:
+  - type: textarea
+    attributes:
+      label: User behavior and failure
+      description: What would the user do, what breaks, and how could we observe it without guessing?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Safe reproducible fixture
+      description: A small before/after example is ideal.
